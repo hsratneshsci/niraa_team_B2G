@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Economic Dashboard - KazhaiAI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#195de6",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111621",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .gauge-container {
+            position: relative;
+            width: 180px;
+            height: 180px;
+        }
+        .gauge-svg {
+            transform: rotate(-90deg);
+        }
+        .gauge-bg {
+            fill: none;
+            stroke: #1e293b;
+            stroke-width: 12;
+        }
+        .gauge-fill {
+            fill: none;
+            stroke: #195de6;
+            stroke-width: 12;
+            stroke-linecap: round;
+            stroke-dasharray: 440;
+            stroke-dashoffset: 140; /* Represents 678/1000 roughly */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col font-display">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between px-6 pt-6 pb-2 sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md z-10">
+<div class="flex items-center gap-2">
+<div class="bg-primary/10 p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary text-2xl">account_balance_wallet</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight dark:text-white">KazhaiAI</h1>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="size-9 rounded-full bg-primary flex items-center justify-center text-white font-bold text-sm">
+                JS
+            </div>
+</div>
+</header>
+<main class="flex-1 px-6 py-4 space-y-8 pb-32">
+<!-- Total Earnings Section -->
+<section class="text-center space-y-1">
+<p class="text-slate-500 dark:text-slate-400 font-medium uppercase tracking-widest text-xs">Total Earnings</p>
+<h2 class="text-5xl font-extrabold tracking-tight dark:text-white">₹45,200</h2>
+<div class="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-emerald-500/10 text-emerald-500 text-sm font-semibold">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>+12.4% this month</span>
+</div>
+</section>
+<!-- Income Trend Chart Container -->
+<section class="bg-white dark:bg-slate-900/50 p-5 rounded-2xl border border-slate-200 dark:border-slate-800">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-bold text-lg dark:text-white">Income vs Date</h3>
+<select class="bg-transparent border-none text-primary font-semibold text-sm focus:ring-0 p-0">
+<option>Last 30 Days</option>
+<option>Last 7 Days</option>
+</select>
+</div>
+<div class="h-40 w-full relative">
+<!-- SVG Chart Mockup -->
+<svg class="w-full h-full overflow-visible" viewbox="0 0 400 120">
+<defs>
+<lineargradient id="gradient" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#195de6" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#195de6" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,100 Q40,90 80,60 T160,70 T240,30 T320,50 T400,20" fill="none" stroke="#195de6" stroke-linecap="round" stroke-width="3"></path>
+<path d="M0,100 Q40,90 80,60 T160,70 T240,30 T320,50 T400,20 V120 H0 Z" fill="url(#gradient)"></path>
+<!-- Chart Points -->
+<circle cx="80" cy="60" fill="#195de6" r="4"></circle>
+<circle cx="240" cy="30" fill="#195de6" r="4"></circle>
+<circle cx="400" cy="20" fill="#195de6" r="4"></circle>
+</svg>
+<div class="flex justify-between mt-4 text-[10px] font-bold text-slate-400 uppercase tracking-tighter">
+<span>1 May</span>
+<span>10 May</span>
+<span>20 May</span>
+<span>30 May</span>
+</div>
+</div>
+</section>
+<!-- Economic Identity / KazhaiScore Section -->
+<section class="flex flex-col items-center justify-center space-y-6">
+<div class="text-center">
+<h3 class="font-bold text-xl dark:text-white">Economic Identity</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Your decentralized credit trust</p>
+</div>
+<div class="gauge-container flex items-center justify-center">
+<svg class="gauge-svg" height="180" width="180">
+<circle class="gauge-bg" cx="90" cy="90" r="70"></circle>
+<circle class="gauge-fill" cx="90" cy="90" r="70"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="text-4xl font-black text-primary">678</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">KazhaiScore</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 w-full">
+<div class="bg-white dark:bg-slate-900/50 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-center">
+<p class="text-[10px] font-bold text-slate-500 uppercase mb-1">Risk Tier</p>
+<p class="font-bold text-amber-500">Moderate</p>
+</div>
+<div class="bg-white dark:bg-slate-900/50 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-center">
+<p class="text-[10px] font-bold text-slate-500 uppercase mb-1">Loan Range</p>
+<p class="font-bold text-primary italic">₹10k – ₹25k</p>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<div class="pt-4">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/25 flex items-center justify-center gap-3 transition-transform active:scale-[0.98]">
+<span class="material-symbols-outlined">download</span>
+                Download Ledger PDF
+            </button>
+<p class="text-center text-[10px] text-slate-500 mt-4 font-medium italic">
+<span class="material-symbols-outlined text-[10px] align-middle">sync</span>
+                Last synced locally: 2 mins ago
+            </p>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Fixed) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-background-dark/90 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 px-6 pb-8 pt-4">
+<div class="flex justify-between items-center max-w-md mx-auto">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">book_4</span>
+<span class="text-[10px] font-bold">Ledger</span>
+</a>
+<div class="relative -top-8">
+<button class="bg-primary size-14 rounded-full flex items-center justify-center text-white shadow-xl shadow-primary/40 border-4 border-background-light dark:border-background-dark">
+<span class="material-symbols-outlined text-3xl">mic</span>
+</button>
+</div>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">handshake</span>
+<span class="text-[10px] font-bold">Loans</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold">Identity</span>
+</a>
+</div>
+</nav>
+</body></html>

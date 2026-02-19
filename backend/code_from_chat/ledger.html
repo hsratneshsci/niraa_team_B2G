@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Income Ledger History - KazhaiAI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#195de6",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111621",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="relative flex min-h-screen w-full max-w-[430px] mx-auto flex-col bg-background-light dark:bg-background-dark shadow-2xl overflow-hidden">
+<!-- Header -->
+<header class="sticky top-0 z-20 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-4 py-4">
+<div class="flex items-center justify-between">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">arrow_back_ios_new</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight">Income Ledger</h1>
+<button class="flex items-center justify-center size-10 rounded-full bg-primary/10">
+<span class="material-symbols-outlined text-primary">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Search & Filter Section -->
+<div class="px-4 pt-4 space-y-4">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-slate-400 dark:text-slate-500">search</span>
+<input class="w-full bg-slate-100 dark:bg-slate-800/50 border-none rounded-xl pl-10 pr-4 py-3 text-sm focus:ring-2 focus:ring-primary/50 placeholder:text-slate-400 dark:placeholder:text-slate-500 transition-all" placeholder="Search earnings..." type="text"/>
+</div>
+<div class="flex gap-2 overflow-x-auto hide-scrollbar pb-2">
+<button class="flex items-center gap-1.5 px-4 py-2 bg-primary text-white rounded-full text-xs font-semibold whitespace-nowrap">
+                    All Time
+                    <span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+<button class="flex items-center gap-1.5 px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-full text-xs font-medium whitespace-nowrap border border-slate-200 dark:border-slate-700">
+                    This Week
+                </button>
+<button class="flex items-center gap-1.5 px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-full text-xs font-medium whitespace-nowrap border border-slate-200 dark:border-slate-700">
+                    Custom Range
+                </button>
+</div>
+</div>
+<!-- Ledger List -->
+<main class="flex-1 px-4 py-4 space-y-6 mb-24">
+<!-- Group: Today -->
+<section class="space-y-3">
+<h2 class="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 px-1">Today</h2>
+<div class="space-y-0.5 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800">
+<!-- Entry 1 -->
+<div class="bg-white dark:bg-slate-900/40 p-4 flex justify-between items-start gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2 text-[10px] text-slate-500 dark:text-slate-400 font-medium">
+<span class="material-symbols-outlined text-[14px]">mic</span>
+                                2:45 PM
+                            </div>
+<p class="text-sm text-slate-700 dark:text-slate-300 italic">"I earned 950 rupees today from the market delivery"</p>
+</div>
+<div class="text-right">
+<span class="text-lg font-bold text-primary">₹950</span>
+</div>
+</div>
+<div class="h-px bg-slate-100 dark:bg-slate-800 mx-4"></div>
+<!-- Entry 2 -->
+<div class="bg-white dark:bg-slate-900/40 p-4 flex justify-between items-start gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2 text-[10px] text-slate-500 dark:text-slate-400 font-medium">
+<span class="material-symbols-outlined text-[14px]">mic</span>
+                                11:20 AM
+                            </div>
+<p class="text-sm text-slate-700 dark:text-slate-300 italic">"Sold 5 baskets for 500"</p>
+</div>
+<div class="text-right">
+<span class="text-lg font-bold text-primary">₹500</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Group: Yesterday -->
+<section class="space-y-3">
+<h2 class="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 px-1">Yesterday</h2>
+<div class="space-y-0.5 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800">
+<!-- Entry 3 -->
+<div class="bg-white dark:bg-slate-900/40 p-4 flex justify-between items-start gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2 text-[10px] text-slate-500 dark:text-slate-400 font-medium">
+<span class="material-symbols-outlined text-[14px]">mic</span>
+                                6:10 PM
+                            </div>
+<p class="text-sm text-slate-700 dark:text-slate-300 italic">"Full day cleaning duty, got 1200 rupees"</p>
+</div>
+<div class="text-right">
+<span class="text-lg font-bold text-primary">₹1,200</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Group: Oct 24 -->
+<section class="space-y-3">
+<h2 class="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 px-1">Oct 24, 2023</h2>
+<div class="space-y-0.5 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800">
+<!-- Entry 4 -->
+<div class="bg-white dark:bg-slate-900/40 p-4 flex justify-between items-start gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2 text-[10px] text-slate-500 dark:text-slate-400 font-medium">
+<span class="material-symbols-outlined text-[14px]">mic</span>
+                                4:30 PM
+                            </div>
+<p class="text-sm text-slate-700 dark:text-slate-300 italic">"Weekly bonus from the agency, 3000 rupees"</p>
+</div>
+<div class="text-right">
+<span class="text-lg font-bold text-primary">₹3,000</span>
+</div>
+</div>
+<div class="h-px bg-slate-100 dark:bg-slate-800 mx-4"></div>
+<!-- Entry 5 -->
+<div class="bg-white dark:bg-slate-900/40 p-4 flex justify-between items-start gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2 text-[10px] text-slate-500 dark:text-slate-400 font-medium">
+<span class="material-symbols-outlined text-[14px]">mic</span>
+                                9:15 AM
+                            </div>
+<p class="text-sm text-slate-700 dark:text-slate-300 italic">"Daily labor at construction, 850 rupees"</p>
+</div>
+<div class="text-right">
+<span class="text-lg font-bold text-primary">₹850</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Sticky Bottom Navigation & Actions -->
+<div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] z-30">
+<!-- Action Bar -->
+<div class="px-4 pb-6 pt-2 bg-gradient-to-t from-background-light dark:from-background-dark via-background-light dark:via-background-dark to-transparent">
+<button class="w-full bg-primary hover:bg-primary/90 text-white flex items-center justify-center gap-3 py-4 rounded-xl font-bold shadow-lg shadow-primary/20 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+                    Download PDF Report
+                </button>
+</div>
+<!-- iOS Style Bottom Tab Bar -->
+<div class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 px-6 pb-8 pt-3 flex justify-between items-center">
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">list_alt</span>
+<span class="text-[10px] font-bold">Ledger</span>
+</a>
+<div class="relative -top-8">
+<button class="size-14 bg-primary text-white rounded-full flex items-center justify-center shadow-xl shadow-primary/40 ring-4 ring-background-light dark:ring-background-dark">
+<span class="material-symbols-outlined text-3xl">mic</span>
+</button>
+</div>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="text-[10px] font-medium">Stats</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</a>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>KazhaiAI - User Profile</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .material-symbols-outlined.fill-1 {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+    <script>
+        tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary": "#195de6", "background-light": "#f6f6f8", "background-dark": "#111621", }, fontFamily: { "display": ["Manrope"] } } } }
+    </script>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+    <header
+        class="flex items-center justify-between px-6 pt-6 pb-4 sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md z-10 border-b border-slate-200 dark:border-slate-800">
+        <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">cloud_done</span>
+            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">Synced Locally</span>
+        </div>
+        <h1 class="text-lg font-bold">Profile</h1>
+        <button class="material-symbols-outlined text-slate-500 hover:text-primary transition-colors">settings</button>
+    </header>
+
+    <main class="flex-1 overflow-y-auto px-4 pb-24">
+        <div class="flex flex-col items-center mt-6 mb-8">
+            <div class="relative">
+                <div
+                    class="w-24 h-24 rounded-full bg-primary/20 flex items-center justify-center border-4 border-primary/30 overflow-hidden mb-4">
+                    <span class="material-symbols-outlined text-5xl text-primary">person</span>
+                </div>
+                <div
+                    class="absolute bottom-4 right-0 bg-primary text-white p-1 rounded-full border-2 border-background-dark">
+                    <span class="material-symbols-outlined text-xs block">edit</span>
+                </div>
+            </div>
+            <h2 class="text-2xl font-bold">User {{ user.phone[-4:] }}</h2>
+            <p class="text-slate-500 dark:text-slate-400">{{ user.phone }}</p>
+        </div>
+
+        <section class="mb-6">
+            <div
+                class="bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl p-5 shadow-sm">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                            Economic Identity</h3>
+                        <p class="text-xs text-primary font-medium mt-1 uppercase">Tier: {{ score.risk_tier }}</p>
+                    </div>
+                    <span class="material-symbols-outlined text-primary">verified_user</span>
+                </div>
+                <div class="flex items-end justify-between">
+                    <div>
+                        <span class="text-4xl font-bold text-primary">{{ score.score }}</span>
+                        <span class="text-slate-400 text-sm ml-1">/ 900</span>
+                        <p class="text-sm font-medium mt-1">KazhaiScore</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <a href="{{ url_for('logout') }}"
+            class="w-full flex items-center justify-center gap-2 p-4 text-rose-500 font-bold border border-rose-500/20 bg-rose-500/5 hover:bg-rose-500/10 rounded-xl transition-all">
+            <span class="material-symbols-outlined">logout</span>Logout
+        </a>
+
+        <div class="py-6 text-center">
+            <p class="text-xs text-slate-500">KazhaiAI v1.0.4 (Local-First Build)</p>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation Bar (Fixed) -->
+    <nav
+        class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-background-dark/90 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 px-6 pb-8 pt-4 z-20">
+        <div class="flex justify-between items-center max-w-md mx-auto">
+            <a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors"
+                href="{{ url_for('dashboard') }}">
+                <span class="material-symbols-outlined">dashboard</span>
+                <span class="text-[10px] font-bold">Home</span>
+            </a>
+            <a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors"
+                href="{{ url_for('ledger') }}">
+                <span class="material-symbols-outlined">book_4</span>
+                <span class="text-[10px] font-bold">Ledger</span>
+            </a>
+            <div class="relative -top-8">
+                <a href="{{ url_for('log_income') }}"
+                    class="bg-primary size-14 rounded-full flex items-center justify-center text-white shadow-xl shadow-primary/40 border-4 border-background-light dark:border-background-dark">
+                    <span class="material-symbols-outlined text-3xl">mic</span>
+                </a>
+            </div>
+            <a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors"
+                href="{{ url_for('skill_match') }}">
+                <span class="material-symbols-outlined">psychology</span>
+                <span class="text-[10px] font-bold">Skills</span>
+            </a>
+            <a class="flex flex-col items-center gap-1 text-primary" href="{{ url_for('profile') }}">
+                <span class="material-symbols-outlined fill-1">person</span>
+                <span class="text-[10px] font-bold">Identity</span>
+            </a>
+        </div>
+    </nav>
+</body>
+
+</html>

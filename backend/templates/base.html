@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KazhaiAI - Econometric Identity</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Icons -->
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">🚀 KazhaiAI</div>
+            {% if session.get('user_id') %}
+            <nav>
+                <a href="{{ url_for('dashboard') }}" class="nav-item">Dashboard</a>
+                <a href="{{ url_for('skill_match') }}" class="nav-item">SkillMatch</a>
+                <a href="{{ url_for('logout') }}" class="nav-item logout">Logout</a>
+            </nav>
+            {% endif %}
+        </header>
+
+        <main>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="flash-messages">
+                        {% for message in messages %}
+                            <div class="flash">{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+
+    <!-- Global Scripts like Voice Recognition Helper -->
+    <script>
+        // Simple global speech recognition helper
+        function startDictation(targetInputId) {
+            if (window.hasOwnProperty('webkitSpeechRecognition')) {
+                var recognition = new webkitSpeechRecognition();
+                recognition.continuous = false;
+                recognition.interimResults = false;
+                recognition.lang = "en-IN"; // English (India)
+                recognition.start();
+
+                recognition.onresult = function(e) {
+                    document.getElementById(targetInputId).value = e.results[0][0].transcript;
+                    recognition.stop();
+                };
+
+                recognition.onerror = function(e) {
+                    recognition.stop();
+                    alert("Speech recognition failed: " + e.error);
+                }
+            } else {
+                alert("Web Speech API not supported in this browser.");
+            }
+        }
+    </script>
+</body>
+</html>

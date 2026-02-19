@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KazhaiAI - User Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#195de6",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111621",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<header class="flex items-center justify-between p-4 sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md z-10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">cloud_done</span>
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">Synced Locally</span>
+</div>
+<h1 class="text-lg font-bold">Profile</h1>
+<button class="material-symbols-outlined text-slate-500 hover:text-primary transition-colors">settings</button>
+</header>
+<main class="flex-1 overflow-y-auto px-4 pb-24">
+<div class="flex flex-col items-center mt-6 mb-8">
+<div class="relative">
+<div class="w-24 h-24 rounded-full bg-primary/20 flex items-center justify-center border-4 border-primary/30 overflow-hidden mb-4">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="Professional headshot of a middle-aged man smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARkRvw4BGiGg0T0oRqnd3bP1k6i21XKiJsmKgpwIP6Ka_bYR3B7QoTrJmsIHa_7Kva6_Yk6ZV650r9CQLVt8NS-sPelwwlNkrYFb0fovhppdET_NeKWaUINAEr-3bv_kEeKcKhg9sAeRWqigDl2mbhIBkFlKVDNzKLd3gGJdh0OXt01oozalh2YZWf5o3kflKYJq4kGca6MrbFjdhyPDm1d912wMbBT17viC_VuiBZkueHASLa4yuVxZe4mLCJr-hkDHsplhHudGY"/>
+</div>
+<div class="absolute bottom-4 right-0 bg-primary text-white p-1 rounded-full border-2 border-background-dark">
+<span class="material-symbols-outlined text-xs block">edit</span>
+</div>
+</div>
+<h2 class="text-2xl font-bold">Rajesh Kumar</h2>
+<p class="text-slate-500 dark:text-slate-400">+91 98765 43210</p>
+</div>
+<section class="mb-6">
+<div class="bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl p-5 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Economic Identity</h3>
+<p class="text-xs text-primary font-medium mt-1 uppercase">Tier: Low Risk (Silver)</p>
+</div>
+<span class="material-symbols-outlined text-primary">verified_user</span>
+</div>
+<div class="flex items-end justify-between">
+<div>
+<span class="text-4xl font-bold text-primary">742</span>
+<span class="text-slate-400 text-sm ml-1">/ 850</span>
+<p class="text-sm font-medium mt-1">KazhaiScore</p>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-all">
+                        Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<section class="mb-8">
+<div class="bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl p-5 shadow-sm">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-tight">Bank Verification</h3>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-500/10 text-amber-500 border border-amber-500/20">Pending</span>
+</div>
+<div class="space-y-3 mb-5">
+<div class="flex flex-col gap-1">
+<label class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase ml-1">Account Holder Name</label>
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg p-3 text-sm font-medium">
+                            Rajesh Kumar
+                        </div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase ml-1">Account Number (Last 4 digits)</label>
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg p-3 text-sm font-medium tracking-widest">
+                            •••• 4412
+                        </div>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-lg font-bold flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-lg">account_balance</span>
+                    Verify Account
+                </button>
+</div>
+</section>
+<section class="space-y-4 mb-8">
+<h3 class="text-sm font-bold text-slate-500 dark:text-slate-400 px-1 uppercase tracking-tight">Preferences</h3>
+<div class="bg-slate-100 dark:bg-slate-800/40 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700">
+<button class="w-full flex items-center justify-between p-4 hover:bg-slate-200 dark:hover:bg-slate-700/50 transition-colors border-b border-slate-200 dark:border-slate-700">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">translate</span>
+<span class="font-medium">Voice Language</span>
+</div>
+<div class="flex items-center gap-2 text-slate-500">
+<span>Hindi / English</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</div>
+</button>
+<div class="w-full flex items-center justify-between p-4 border-b border-slate-200 dark:border-slate-700">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">notifications</span>
+<span class="font-medium">Notifications</span>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-slate-300 dark:bg-slate-600 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</div>
+</div>
+<button class="w-full flex items-center justify-between p-4 hover:bg-slate-200 dark:hover:bg-slate-700/50 transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">dark_mode</span>
+<span class="font-medium">Appearance</span>
+</div>
+<div class="flex items-center gap-2 text-slate-500">
+<span>Dark Mode</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</div>
+</button>
+</div>
+</section>
+<section class="space-y-4 mb-8">
+<h3 class="text-sm font-bold text-slate-500 dark:text-slate-400 px-1 uppercase tracking-tight">Support &amp; Legal</h3>
+<div class="bg-slate-100 dark:bg-slate-800/40 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700">
+<button class="w-full flex items-center justify-between p-4 border-b border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700/50">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400">help</span>
+<span class="font-medium">Help &amp; Support</span>
+</div>
+<span class="material-symbols-outlined text-slate-500 text-sm">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 hover:bg-slate-200 dark:hover:bg-slate-700/50">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400">description</span>
+<span class="font-medium">Terms of Service</span>
+</div>
+<span class="material-symbols-outlined text-slate-500 text-sm">chevron_right</span>
+</button>
+</div>
+</section>
+<button class="w-full flex items-center justify-center gap-2 p-4 text-rose-500 font-bold border border-rose-500/20 bg-rose-500/5 hover:bg-rose-500/10 rounded-xl transition-all">
+<span class="material-symbols-outlined">logout</span>
+            Logout
+        </button>
+<div class="py-6 text-center">
+<p class="text-xs text-slate-500">KazhaiAI v1.0.4 (Local-First Build)</p>
+</div>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 bg-background-light dark:bg-[#1a2232] border-t border-slate-200 dark:border-[#243047] pb-6 pt-2 px-6 flex justify-between items-center z-20">
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">mic</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Logs</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill-[1]">person</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Profile</span>
+</a>
+</nav>
+
+</body></html>

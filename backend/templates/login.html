@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>KazhaiAI Login</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#195de6",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111621",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .ios-status-bar {
+            height: 44px;
+        }
+
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+    <div class="ios-status-bar w-full"></div>
+    <main class="flex-1 flex flex-col px-6 pb-12 max-w-md mx-auto w-full">
+        <div class="flex flex-col items-center mt-12 mb-10">
+            <div
+                class="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 border border-primary/20">
+                <span class="material-symbols-outlined text-primary text-5xl"
+                    style="font-variation-settings: 'FILL' 1">account_balance_wallet</span>
+            </div>
+            <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">KazhaiAI</h1>
+        </div>
+
+        <div class="mb-10 overflow-hidden rounded-2xl shadow-2xl shadow-primary/10">
+            <div
+                class="w-full aspect-[16/9] bg-gradient-to-br from-primary/20 to-background-dark flex items-center justify-center relative border border-white/5">
+                <div
+                    class="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary via-transparent to-transparent">
+                </div>
+                <span class="material-symbols-outlined text-6xl text-primary/40">insights</span>
+            </div>
+        </div>
+
+        <div class="text-center mb-10">
+            <h2 class="text-2xl font-bold leading-tight mb-3">Build your economic identity</h2>
+            <p class="text-slate-600 dark:text-slate-400 text-base">Enter your phone number to get started with your
+                voice-based income logger.</p>
+        </div>
+
+        <!-- Login Form -->
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="mb-4 p-4 rounded-xl bg-red-50 text-red-600 border border-red-100 text-sm font-medium text-center">
+            {{ messages[0] }}
+        </div>
+        {% endif %}
+        {% endwith %}
+        <form action="{{ url_for('login') }}" method="POST" class="space-y-6 flex-1">
+            <div class="space-y-2">
+                <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 ml-1" for="phone">Phone
+                    Number</label>
+                <div class="relative group">
+                    <div
+                        class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none border-r border-slate-200 dark:border-slate-700 my-3 pr-3">
+                        <span class="text-slate-500 dark:text-slate-400 font-medium">+91</span>
+                    </div>
+                    <input
+                        class="block w-full pl-16 pr-4 py-4 bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl text-lg font-medium focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-200 placeholder:text-slate-400 dark:placeholder:text-slate-600"
+                        id="phone" name="phone" placeholder="00000 00000" type="tel" required pattern="[0-9]{10}">
+                </div>
+            </div>
+            <button type="submit"
+                class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/20 transition-all active:scale-[0.98] flex items-center justify-center gap-2">
+                Get OTP <span class="material-symbols-outlined text-xl">arrow_forward</span>
+            </button>
+        </form>
+
+        <div class="mt-auto pt-8">
+            <div class="flex flex-col items-center space-y-4">
+                <div class="flex items-center gap-2 px-3 py-1.5 bg-primary/5 rounded-full border border-primary/10">
+                    <span class="material-symbols-outlined text-sm text-primary">verified_user</span>
+                    <span class="text-xs font-medium text-slate-600 dark:text-slate-400">Secure &amp; Local-first
+                        architecture</span>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
