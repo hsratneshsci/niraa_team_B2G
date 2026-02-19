@@ -1,4 +1,4 @@
-# 🚀 KazhaiAI - Simplified MVP (48-Hour Hackathon Edition)
+# 🚀 KazhaiAI - Simplified MVP
 
 KazhaiAI converts voice-based daily income logging into a trusted economic identity for gig workers.
 
@@ -35,4 +35,3 @@ KazhaiAI converts voice-based daily income logging into a trusted economic ident
 "Simple but believable." The app uses premium aesthetics to build trust, while keeping the tech stack rugged and local-friendly.
 
 ---
-*Built for the [Hackathon Name] by Antigravity*
